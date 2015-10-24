@@ -16,6 +16,7 @@
 		3207A38C1BDBAACC007CE339 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3207A38A1BDBAACC007CE339 /* LaunchScreen.storyboard */; };
 		3207A3971BDBAACC007CE339 /* ContatosIP67Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3961BDBAACC007CE339 /* ContatosIP67Tests.m */; };
 		3207A3A21BDBAACC007CE339 /* ContatosIP67UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3A11BDBAACC007CE339 /* ContatosIP67UITests.m */; };
+		3207A3B01BDBB6E0007CE339 /* Aula.md in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3AF1BDBB6E0007CE339 /* Aula.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3207A39D1BDBAACC007CE339 /* ContatosIP67UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContatosIP67UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3207A3A11BDBAACC007CE339 /* ContatosIP67UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContatosIP67UITests.m; sourceTree = "<group>"; };
 		3207A3A31BDBAACC007CE339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3207A3AF1BDBB6E0007CE339 /* Aula.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Aula.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		3207A36D1BDBAACC007CE339 = {
 			isa = PBXGroup;
 			children = (
+				3207A3AF1BDBB6E0007CE339 /* Aula.md */,
 				3207A3781BDBAACC007CE339 /* ContatosIP67 */,
 				3207A3951BDBAACC007CE339 /* ContatosIP67Tests */,
 				3207A3A01BDBAACC007CE339 /* ContatosIP67UITests */,
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3207A3B01BDBB6E0007CE339 /* Aula.md in Sources */,
 				3207A3811BDBAACC007CE339 /* ViewController.m in Sources */,
 				3207A37E1BDBAACC007CE339 /* AppDelegate.m in Sources */,
 				3207A3871BDBAACC007CE339 /* ContatosIP67.xcdatamodeld in Sources */,
@@ -415,7 +419,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ContatosIP67/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.org.venturus.ContatosIP67;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,7 +432,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ContatosIP67/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.org.venturus.ContatosIP67;
 				PRODUCT_NAME = "$(TARGET_NAME)";
