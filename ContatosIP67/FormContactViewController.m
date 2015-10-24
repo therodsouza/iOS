@@ -22,13 +22,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*!
+ Get the values of the form fields, create a Contact and add to the contacts array
+ */
 - (IBAction) getFormData {
+    // Get the values from the text fields
     NSString *name = self.textFieldName.text;
     NSString *email = self.textFieldEmail.text;
     NSString *site = self.textFieldSite.text;
     NSString *address = self.textFieldAddress.text;
     NSString *phone = self.textFieldPhone.text;
     
+    // Create the contact object and set the values
     Contact *contact = [Contact new];
     
     contact.name = name;
@@ -36,8 +41,13 @@
     contact.site = site;
     contact.address =address;
     contact.phone = phone;
+
+    // Check if the contacts os
+    ContactDao *dao = [ContactDao contactDaoInstance];
     
-    NSLog(@"Contact %@", contact);
+    [dao addContacts:contact];
+    
+    NSLog(@"Contact %@", dao.contacts);
 }
 
 @end

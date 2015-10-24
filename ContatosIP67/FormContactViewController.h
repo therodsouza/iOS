@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Contact.h"
+#import "ContactDao.h"
 
 @interface FormContactViewController : UIViewController
 

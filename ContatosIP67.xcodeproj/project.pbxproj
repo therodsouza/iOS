@@ -14,10 +14,10 @@
 		3207A38C1BDBAACC007CE339 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3207A38A1BDBAACC007CE339 /* LaunchScreen.storyboard */; };
 		3207A3971BDBAACC007CE339 /* ContatosIP67Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3961BDBAACC007CE339 /* ContatosIP67Tests.m */; };
 		3207A3A21BDBAACC007CE339 /* ContatosIP67UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3A11BDBAACC007CE339 /* ContatosIP67UITests.m */; };
-		3207A3B01BDBB6E0007CE339 /* Aula.md in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3AF1BDBB6E0007CE339 /* Aula.md */; };
 		3207A3B81BDBE7F6007CE339 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3B51BDBE7F6007CE339 /* AppDelegate.m */; };
 		3207A3B91BDBE7F6007CE339 /* FormContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3B71BDBE7F6007CE339 /* FormContactViewController.m */; };
 		3207A3BC1BDBE80C007CE339 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3BB1BDBE80C007CE339 /* Contact.m */; };
+		3207A3BF1BDBF136007CE339 /* ContactDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3BE1BDBF136007CE339 /* ContactDao.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,13 +51,14 @@
 		3207A39D1BDBAACC007CE339 /* ContatosIP67UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContatosIP67UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3207A3A11BDBAACC007CE339 /* ContatosIP67UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContatosIP67UITests.m; sourceTree = "<group>"; };
 		3207A3A31BDBAACC007CE339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3207A3AF1BDBB6E0007CE339 /* Aula.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Aula.md; sourceTree = "<group>"; };
 		3207A3B41BDBE7F6007CE339 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3207A3B51BDBE7F6007CE339 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3207A3B61BDBE7F6007CE339 /* FormContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormContactViewController.h; sourceTree = "<group>"; };
 		3207A3B71BDBE7F6007CE339 /* FormContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormContactViewController.m; sourceTree = "<group>"; };
 		3207A3BA1BDBE80C007CE339 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		3207A3BB1BDBE80C007CE339 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		3207A3BD1BDBF136007CE339 /* ContactDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDao.h; sourceTree = "<group>"; };
+		3207A3BE1BDBF136007CE339 /* ContactDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDao.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +89,6 @@
 		3207A36D1BDBAACC007CE339 = {
 			isa = PBXGroup;
 			children = (
-				3207A3AF1BDBB6E0007CE339 /* Aula.md */,
 				3207A3781BDBAACC007CE339 /* ContatosIP67 */,
 				3207A3951BDBAACC007CE339 /* ContatosIP67Tests */,
 				3207A3A01BDBAACC007CE339 /* ContatosIP67UITests */,
@@ -121,6 +121,8 @@
 				3207A38D1BDBAACC007CE339 /* Info.plist */,
 				3207A3851BDBAACC007CE339 /* ContatosIP67.xcdatamodeld */,
 				3207A3791BDBAACC007CE339 /* Supporting Files */,
+				3207A3BD1BDBF136007CE339 /* ContactDao.h */,
+				3207A3BE1BDBF136007CE339 /* ContactDao.m */,
 			);
 			path = ContatosIP67;
 			sourceTree = "<group>";
@@ -282,9 +284,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3207A3B81BDBE7F6007CE339 /* AppDelegate.m in Sources */,
-				3207A3B01BDBB6E0007CE339 /* Aula.md in Sources */,
 				3207A3871BDBAACC007CE339 /* ContatosIP67.xcdatamodeld in Sources */,
 				3207A3B91BDBE7F6007CE339 /* FormContactViewController.m in Sources */,
+				3207A3BF1BDBF136007CE339 /* ContactDao.m in Sources */,
 				3207A3BC1BDBE80C007CE339 /* Contact.m in Sources */,
 				3207A37B1BDBAACC007CE339 /* main.m in Sources */,
 			);
