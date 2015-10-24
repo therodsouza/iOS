@@ -18,6 +18,7 @@
 		3207A3B91BDBE7F6007CE339 /* FormContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3B71BDBE7F6007CE339 /* FormContactViewController.m */; };
 		3207A3BC1BDBE80C007CE339 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3BB1BDBE80C007CE339 /* Contact.m */; };
 		3207A3BF1BDBF136007CE339 /* ContactDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3BE1BDBF136007CE339 /* ContactDao.m */; };
+		3207A3C51BDC080C007CE339 /* ContactsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3C41BDC080C007CE339 /* ContactsListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		3207A3BB1BDBE80C007CE339 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		3207A3BD1BDBF136007CE339 /* ContactDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDao.h; sourceTree = "<group>"; };
 		3207A3BE1BDBF136007CE339 /* ContactDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDao.m; sourceTree = "<group>"; };
+		3207A3C31BDC080C007CE339 /* ContactsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsListViewController.h; sourceTree = "<group>"; };
+		3207A3C41BDC080C007CE339 /* ContactsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				3207A3791BDBAACC007CE339 /* Supporting Files */,
 				3207A3BD1BDBF136007CE339 /* ContactDao.h */,
 				3207A3BE1BDBF136007CE339 /* ContactDao.m */,
+				3207A3C31BDC080C007CE339 /* ContactsListViewController.h */,
+				3207A3C41BDC080C007CE339 /* ContactsListViewController.m */,
 			);
 			path = ContatosIP67;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				3207A3BF1BDBF136007CE339 /* ContactDao.m in Sources */,
 				3207A3BC1BDBE80C007CE339 /* Contact.m in Sources */,
 				3207A37B1BDBAACC007CE339 /* main.m in Sources */,
+				3207A3C51BDC080C007CE339 /* ContactsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

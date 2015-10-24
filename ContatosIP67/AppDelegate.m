@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ContactsListViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // We want to use ContactsListViewController as main screen
+    ContactsListViewController *list = [ContactsListViewController new];
+    
+    self.window.rootViewController = list;
+    
+    
     // Override point for customization after application launch.
     return YES;
 }

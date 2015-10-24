@@ -8,6 +8,10 @@
 
 #import "FormContactViewController.h"
 
+@interface FormContactViewController ()
+    @property ContactDao *dao;
+
+@end
 
 
 @implementation FormContactViewController
@@ -20,6 +24,27 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Quam chama esse metodo eh o COntroller, mas pode ser pelo init normal mesmo
+//-(id) initWithCoder:(NSCoder *)aDecoder {
+//    self = [super initWithCoder: aDecoder];
+//    
+//    if (self) {
+//                NSLog(@"THIS IS NSCODER!");
+//    }
+//    
+//    return self;
+//}
+
+-(id) init {
+    self = [super init];
+    NSLog(@"THIS IS INIT!");
+    if (self) {
+        self.dao = [ContactDao contactDaoInstance];
+    }
+    
+    return self;
 }
 
 /*!
@@ -42,12 +67,11 @@
     contact.address =address;
     contact.phone = phone;
 
-    // Check if the contacts os
-    ContactDao *dao = [ContactDao contactDaoInstance];
+    //
     
-    [dao addContacts:contact];
+    [self.dao addContacts:contact];
     
-    NSLog(@"Contact %@", dao.contacts);
+    NSLog(@"Contact %@", self.dao.contacts);
 }
 
 @end
