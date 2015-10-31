@@ -17,4 +17,5 @@
 -(void)addContacts:(Contact *) contact;
 -(NSInteger) total;
 -(Contact *) get:(NSInteger) index;
+-(void) remove:(NSInteger) index;
 @end

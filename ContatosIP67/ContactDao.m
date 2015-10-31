@@ -42,4 +42,8 @@ static ContactDao *defaultDao = nil;
     return self.contacts[index];
 }
 
+- (void)remove:(NSInteger)index {
+    [self.contacts removeObjectAtIndex:index];
+}
+
 @end

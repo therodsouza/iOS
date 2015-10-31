@@ -21,10 +21,13 @@ static NSString *CONTAC_CELL = @"contactCell";
     if (self) {
         // Create the addButton, calling self the method showFormContacView
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemAdd) target:self action:@selector(showFormContactView)];
+
         // Set the title
         self.navigationItem.title = @"VNT Contacts";
         // Add the button
         self.navigationItem.rightBarButtonItem = addButton;
+        // The view already have the 'edit' button ready, just add it to the view
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
         
         // Get the dao
         self.dao = [ContactDao contactDaoInstance];
@@ -43,6 +46,8 @@ static NSString *CONTAC_CELL = @"contactCell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 // Opens the form contact view
 - (void) showFormContactView {
     
@@ -90,6 +95,14 @@ static NSString *CONTAC_CELL = @"contactCell";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.dao remove:indexPath.row];
+        // [tableView reloadData];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+// Reload the table view contents just before the view appear
 -(void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
 }
