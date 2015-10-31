@@ -41,17 +41,21 @@
 // Opens the form contact view
 - (void) showFormContactView {
     
-    // Create the controller
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                                                   message:@"This is an alert."
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    // Create the default Action button
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:nil];
-    // Add the button
-    [alert addAction:defaultAction];
-    // Show the alert
-    [self presentViewController:alert animated:YES completion:nil];
+    /* Create the form */
+    
+    // Doing this manualy, the screen will not appear. We need to create using with the story board
+    // FormContactViewController *form = [FormContactViewController new];
+    
+    // Creating with the story board
+    // Get the storyBoard instance
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FormContactViewController *form = [storyBoard instantiateViewControllerWithIdentifier:@"formContact"];
+    
+    
+    // Now send the message to navigation Controller to show the form
+    [self.navigationController pushViewController:form animated: YES];
+    
+
 }
 /*
 #pragma mark - Navigation

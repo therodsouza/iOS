@@ -10,6 +10,7 @@
 
 @interface FormContactViewController ()
     @property ContactDao *dao;
+    @property Contact *contact;
 
 @end
 
@@ -26,31 +27,38 @@
     // Dispose of any resources that can be recreated.
 }
 
-// Quam chama esse metodo eh o COntroller, mas pode ser pelo init normal mesmo
-//-(id) initWithCoder:(NSCoder *)aDecoder {
-//    self = [super initWithCoder: aDecoder];
-//    
-//    if (self) {
-//                NSLog(@"THIS IS NSCODER!");
-//    }
-//    
-//    return self;
-//}
-
--(id) init {
-    self = [super init];
-    NSLog(@"THIS IS INIT!");
+// Story board call this method instead of init
+-(id) initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder: aDecoder];
     if (self) {
+        // Set the title (shortcut to self.navigationItem.title)
+        self.title = @"New contact";
         self.dao = [ContactDao contactDaoInstance];
+        
+        // Create the addButton, calling self the method showFormContacView
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveContact)];
+        // Add the button
+        self.navigationItem.rightBarButtonItem = saveButton;
+
+        
     }
     
     return self;
 }
 
+-(void) saveContact {
+    // Create the property contact
+    self.contact = [Contact new];
+    // get the form data and save it
+    [self getFormData];
+    // pop this form
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    // There are other popTo* methods to go to other screens in the stack
+}
 /*!
  Get the values of the form fields, create a Contact and add to the contacts array
  */
-- (IBAction) getFormData {
+- (void) getFormData {
     // Get the values from the text fields
     NSString *name = self.textFieldName.text;
     NSString *email = self.textFieldEmail.text;
@@ -59,17 +67,14 @@
     NSString *phone = self.textFieldPhone.text;
     
     // Create the contact object and set the values
-    Contact *contact = [Contact new];
-    
-    contact.name = name;
-    contact.email = email;
-    contact.site = site;
-    contact.address =address;
-    contact.phone = phone;
+    self.contact.name = name;
+    self.contact.email = email;
+    self.contact.site = site;
+    self.contact.address =address;
+    self.contact.phone = phone;
 
-    //
-    
-    [self.dao addContacts:contact];
+    // add the contact
+    [self.dao addContacts:self.contact];
     
     NSLog(@"Contact %@", self.dao.contacts);
 }

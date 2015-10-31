@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPhone;
 
 
-    -(IBAction) getFormData;
 
 
 @end
