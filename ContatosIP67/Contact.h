@@ -15,4 +15,5 @@
 @property (strong) NSString *address;
 @property (strong) NSString *phone;
 
+
 @end

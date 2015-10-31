@@ -33,4 +33,13 @@ static ContactDao *defaultDao = nil;
 -(void) addContacts:(Contact *)contact {
     [self.contacts addObject:contact];
 }
+
+-(NSInteger) total {
+    return self.contacts.count;
+}
+
+-(Contact *)get:(NSInteger)index {
+    return self.contacts[index];
+}
+
 @end

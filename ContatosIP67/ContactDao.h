@@ -14,6 +14,7 @@
 @property (strong, readonly) NSMutableArray *contacts;
 
 +(ContactDao *) contactDaoInstance;
-
 -(void)addContacts:(Contact *) contact;
+-(NSInteger) total;
+-(Contact *) get:(NSInteger) index;
 @end

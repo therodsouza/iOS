@@ -9,8 +9,8 @@
 #import "FormContactViewController.h"
 
 @interface FormContactViewController ()
-    @property ContactDao *dao;
-    @property Contact *contact;
+@property ContactDao *dao;
+@property Contact *contact;
 
 @end
 
@@ -76,7 +76,6 @@
     // add the contact
     [self.dao addContacts:self.contact];
     
-    NSLog(@"Contact %@", self.dao.contacts);
 }
 
 @end

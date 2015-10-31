@@ -9,10 +9,12 @@
 #import "ContactsListViewController.h"
 
 @interface ContactsListViewController ()
-
+@property ContactDao *dao;
 @end
 
 @implementation ContactsListViewController
+
+static NSString *CONTAC_CELL = @"contactCell";
 
 -(id) init {
     self = [super init];
@@ -23,6 +25,9 @@
         self.navigationItem.title = @"VNT Contacts";
         // Add the button
         self.navigationItem.rightBarButtonItem = addButton;
+        
+        // Get the dao
+        self.dao = [ContactDao contactDaoInstance];
     }
     
     return self;
@@ -55,7 +60,38 @@
     // Now send the message to navigation Controller to show the form
     [self.navigationController pushViewController:form animated: YES];
     
+}
 
+/* Methods to set the table values */
+// Default to have 1 section
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+// Returns the number of contacts
+- (NSInteger) tableView: (UITableView *) tableView numberOfRowsInSection: (NSInteger) section {
+    return [self.dao total];
+}
+
+// Return the component
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Contact *contact = [self.dao get: indexPath.row];
+    
+    // Try to re-use a cell that is not visible to avoid memory usage
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CONTAC_CELL];
+    
+    // If the cell does not exist, we need to create it
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CONTAC_CELL];
+    }
+    
+    cell.textLabel.text = contact.name;
+    
+    return cell;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 /*
 #pragma mark - Navigation
