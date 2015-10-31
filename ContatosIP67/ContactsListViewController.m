@@ -99,6 +99,7 @@ static NSString *CONTAC_CELL = @"contactCell";
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.dao remove:indexPath.row];
         // [tableView reloadData];
+        // Instead of reload the full table, only remove the selected row
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
