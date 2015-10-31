@@ -20,8 +20,12 @@
     // We want to use ContactsListViewController as main screen
     ContactsListViewController *list = [ContactsListViewController new];
     
-    self.window.rootViewController = list;
-    
+    // Create the Navigation Controller
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:list];
+
+    // Set the navigation controller as the root view controller
+    self.window.rootViewController = nav;
+
     // Override point for customization after application launch.
     return YES;
 }

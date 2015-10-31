@@ -14,6 +14,21 @@
 
 @implementation ContactsListViewController
 
+-(id) init {
+    self = [super init];
+    if (self) {
+        // Create the addButton, calling self the method showFormContacView
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemAdd) target:self action:@selector(showFormContactView)];
+        // Set the title
+        self.navigationItem.title = @"VNT Contacts";
+        // Add the button
+        self.navigationItem.rightBarButtonItem = addButton;
+    }
+    
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -23,7 +38,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+// Opens the form contact view
+- (void) showFormContactView {
+    
+    // Create the controller
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
+                                                                   message:@"This is an alert."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    // Create the default Action button
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:nil];
+    // Add the button
+    [alert addAction:defaultAction];
+    // Show the alert
+    [self presentViewController:alert animated:YES completion:nil];
+}
 /*
 #pragma mark - Navigation
 
