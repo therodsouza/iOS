@@ -10,6 +10,7 @@
 
 @interface ContactsListViewController ()
 @property ContactDao *dao;
+@property Contact *selectedContact;
 @end
 
 @implementation ContactsListViewController
@@ -61,6 +62,10 @@ static NSString *CONTAC_CELL = @"contactCell";
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FormContactViewController *form = [storyBoard instantiateViewControllerWithIdentifier:@"formContact"];
     
+    if (self.selectedContact) {
+        form.contact = self.selectedContact;
+    }
+    
     
     // Now send the message to navigation Controller to show the form
     [self.navigationController pushViewController:form animated: YES];
@@ -95,6 +100,7 @@ static NSString *CONTAC_CELL = @"contactCell";
     return cell;
 }
 
+/* Method to remove the row */
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.dao remove:indexPath.row];
@@ -103,6 +109,16 @@ static NSString *CONTAC_CELL = @"contactCell";
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
+
+/* Method to edit the row */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Get the selected contat
+    self.selectedContact = [self.dao get:indexPath.row];
+    // Call the show form contact view
+    [self showFormContactView];
+    self.selectedContact = nil;
+}
+
 // Reload the table view contents just before the view appear
 -(void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];

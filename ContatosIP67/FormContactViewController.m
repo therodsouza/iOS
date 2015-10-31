@@ -10,8 +10,6 @@
 
 @interface FormContactViewController ()
 @property ContactDao *dao;
-@property Contact *contact;
-
 @end
 
 
@@ -19,7 +17,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIBarButtonItem *saveButton = nil;
     // Do any additional setup after loading the view, typically from a nib.
+    
+    if (self.contact) {
+        self.textFieldName.text = self.contact.name;
+        self.textFieldEmail.text = self.contact.email;
+        self.textFieldSite.text = self.contact.site;
+        self.textFieldAddress.text = self.contact.address;
+        self.textFieldPhone.text = self.contact.phone;
+
+        // Create the addButton, calling self the method showFormContacView
+        saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Update" style:UIBarButtonItemStylePlain target:self action:@selector(updateContact)];
+    } else {
+        saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveContact)];
+
+    }
+    
+    // Add the button
+    self.navigationItem.rightBarButtonItem = saveButton;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,10 +53,6 @@
         self.title = @"New contact";
         self.dao = [ContactDao contactDaoInstance];
         
-        // Create the addButton, calling self the method showFormContacView
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveContact)];
-        // Add the button
-        self.navigationItem.rightBarButtonItem = saveButton;
 
         
     }
@@ -46,14 +60,27 @@
     return self;
 }
 
+// Save new Contacts
 -(void) saveContact {
     // Create the property contact
     self.contact = [Contact new];
     // get the form data and save it
     [self getFormData];
+    // add the contact
+    [self.dao addContacts:self.contact];
+
     // pop this form
     [self.navigationController popToRootViewControllerAnimated:YES];
     // There are other popTo* methods to go to other screens in the stack
+}
+
+-(void) updateContact {
+    // get the form data and save it
+    [self getFormData];
+    // pop this form
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    // There are other popTo* methods to go to other screens in the stack
+
 }
 /*!
  Get the values of the form fields, create a Contact and add to the contacts array
@@ -73,8 +100,6 @@
     self.contact.address =address;
     self.contact.phone = phone;
 
-    // add the contact
-    [self.dao addContacts:self.contact];
     
 }
 
