@@ -20,6 +20,7 @@
 		3207A3BF1BDBF136007CE339 /* ContactDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3BE1BDBF136007CE339 /* ContactDao.m */; };
 		3207A3C51BDC080C007CE339 /* ContactsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3C41BDC080C007CE339 /* ContactsListViewController.m */; };
 		32BB79961BEE462F00AD84B2 /* ActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB79951BEE462F00AD84B2 /* ActionManager.m */; };
+		32BE61891BF771E300DFB871 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BE61881BF771E300DFB871 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		3207A3C41BDC080C007CE339 /* ContactsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsListViewController.m; sourceTree = "<group>"; };
 		32BB79941BEE462F00AD84B2 /* ActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionManager.h; sourceTree = "<group>"; };
 		32BB79951BEE462F00AD84B2 /* ActionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionManager.m; sourceTree = "<group>"; };
+		32BE61881BF771E300DFB871 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BE61891BF771E300DFB871 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +98,7 @@
 		3207A36D1BDBAACC007CE339 = {
 			isa = PBXGroup;
 			children = (
+				32BE61881BF771E300DFB871 /* MapKit.framework */,
 				3207A3781BDBAACC007CE339 /* ContatosIP67 */,
 				3207A3951BDBAACC007CE339 /* ContatosIP67Tests */,
 				3207A3A01BDBAACC007CE339 /* ContatosIP67UITests */,
