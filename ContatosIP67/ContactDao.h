@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Contact.h"
+@import UIKit;
 @interface ContactDao : NSObject
 
 // Strong reference and without the set method
@@ -18,4 +19,6 @@
 -(NSInteger) total;
 -(Contact *) get:(NSInteger) index;
 -(void) remove:(NSInteger) index;
+-(NSInteger) searchContactPosition:(Contact *) contact;
+
 @end

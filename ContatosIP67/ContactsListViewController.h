@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "FormContactViewController.h"
+#import "ActionManager.h"
 
-@interface ContactsListViewController : UITableViewController
+@interface ContactsListViewController : UITableViewController<FormContactViewControllerDelegate>
+
+@property NSInteger highlightRow;
+@property (readonly) ActionManager *actionManager;
+
+-(void)showMoreActions:(UIGestureRecognizer *) gesture;
 
 @end

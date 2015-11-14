@@ -10,6 +10,13 @@
 #import "Contact.h"
 #import "ContactDao.h"
 
+@protocol FormContactViewControllerDelegate <NSObject>
+
+- (void) contactUpdated:(Contact *) contact;
+- (void) contactAdded:(Contact *) contact;
+
+@end
+
 @interface FormContactViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldName;
@@ -18,8 +25,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldAddress;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPhone;
 @property Contact *contact;
+@property (weak) id<FormContactViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *photoBtn;
 
-
+- (IBAction)selectPhoto;
 
 @end
 

@@ -46,4 +46,8 @@ static ContactDao *defaultDao = nil;
     [self.contacts removeObjectAtIndex:index];
 }
 
+-(NSInteger) searchContactPosition:(Contact *)contact {
+    return [self.contacts indexOfObject:contact];
+}
+
 @end

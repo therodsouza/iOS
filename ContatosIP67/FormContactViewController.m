@@ -72,6 +72,10 @@
     // pop this form
     [self.navigationController popToRootViewControllerAnimated:YES];
     // There are other popTo* methods to go to other screens in the stack
+    
+    if (self.delegate) {
+        [self.delegate contactAdded:self.contact];
+    }
 }
 
 -(void) updateContact {
@@ -80,6 +84,10 @@
     // pop this form
     [self.navigationController popToRootViewControllerAnimated:YES];
     // There are other popTo* methods to go to other screens in the stack
+    
+    if (self.delegate) {
+        [self.delegate contactUpdated:self.contact];
+    }
 
 }
 /*!
@@ -101,6 +109,10 @@
     self.contact.phone = phone;
 
     
+}
+
+- (IBAction)selectPhoto {
+    NSLog(@"Clicked photo button");
 }
 
 @end

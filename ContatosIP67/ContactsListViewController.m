@@ -32,6 +32,7 @@ static NSString *CONTAC_CELL = @"contactCell";
         
         // Get the dao
         self.dao = [ContactDao contactDaoInstance];
+        self.highlightRow = -1;
     }
     
     return self;
@@ -41,6 +42,23 @@ static NSString *CONTAC_CELL = @"contactCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showMoreActions:)];
+    
+    [self.tableView addGestureRecognizer:longPress];
+}
+
+-(void) showMoreActions:(UIGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        CGPoint point = [gesture locationInView:self.tableView];
+        NSIndexPath *index = [self.tableView indexPathForRowAtPoint:point];
+        
+        if (index) {
+            self.selectedContact = [self.dao get:index.row];
+            _actionManager = [[ActionManager alloc] initWithContact:self.selectedContact];
+            [self.actionManager controllerActions:self];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,6 +84,7 @@ static NSString *CONTAC_CELL = @"contactCell";
         form.contact = self.selectedContact;
     }
     
+    form.delegate = self;
     
     // Now send the message to navigation Controller to show the form
     [self.navigationController pushViewController:form animated: YES];
@@ -123,6 +142,16 @@ static NSString *CONTAC_CELL = @"contactCell";
 -(void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
 }
+
+-(void)viewDidAppear:(BOOL)animated {
+    if (self.highlightRow >= 0) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.highlightRow inSection:0];
+        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        self.highlightRow = -1;
+    }
+}
+
 /*
 #pragma mark - Navigation
 
@@ -132,5 +161,15 @@ static NSString *CONTAC_CELL = @"contactCell";
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) contactUpdated:(Contact *)contact {
+    NSLog(@"contact updated: %@", contact.name);
+    self.highlightRow = [self.dao searchContactPosition:contact];
+}
+
+- (void) contactAdded:(Contact *)contact {
+    NSLog(@"contact added: %@", contact.name);
+    self.highlightRow = [self.dao searchContactPosition:contact];
+}
 
 @end
