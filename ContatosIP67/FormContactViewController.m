@@ -7,6 +7,7 @@
 //
 
 #import "FormContactViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface FormContactViewController ()
 @property ContactDao *dao;
@@ -162,6 +163,10 @@
     
     [self presentViewController:picker animated:YES completion: nil];
     
+}
+
+- (IBAction)searchCoordinates {
+    CLGeocoder *geocoder = [CLGeocoder new];
 }
 
 

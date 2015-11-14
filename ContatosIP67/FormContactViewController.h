@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *photoBtn;
 
 - (IBAction)selectPhoto;
+- (IBAction)searchCoordinates;
 
 @end
 
