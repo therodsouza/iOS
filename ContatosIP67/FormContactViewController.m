@@ -28,6 +28,11 @@
         self.textFieldAddress.text = self.contact.address;
         self.textFieldPhone.text = self.contact.phone;
 
+        if (self.contact.photo) {
+            [self.photoBtn setBackgroundImage:self.contact.photo forState:UIControlStateNormal];
+            [self.photoBtn setTitle:nil forState:UIControlStateNormal];
+        }
+        
         // Create the addButton, calling self the method showFormContacView
         saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Update" style:UIBarButtonItemStylePlain target:self action:@selector(updateContact)];
     } else {
@@ -94,6 +99,15 @@
  Get the values of the form fields, create a Contact and add to the contacts array
  */
 - (void) getFormData {
+    
+    if (!self.contact) {
+        self.contact = [Contact new];
+    }
+    
+    if ([self.photoBtn backgroundImageForState:UIControlStateNormal]) {
+        self.contact.photo = [self.photoBtn backgroundImageForState:UIControlStateNormal];
+    }
+    
     // Get the values from the text fields
     NSString *name = self.textFieldName.text;
     NSString *email = self.textFieldEmail.text;
@@ -112,7 +126,43 @@
 }
 
 - (IBAction)selectPhoto {
-    NSLog(@"Clicked photo button");
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Pick photo" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle: nil otherButtonTitles:@"Camera", @"Library", nil];
+        
+        [sheet showInView: self.view];
+        
+    } else {
+        UIImagePickerController *picker = [UIImagePickerController new];
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.allowsEditing = YES;
+        picker.delegate = self;
+        
+        [self presentViewController:picker animated:YES completion:nil];
+    }
 }
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+    
+    [self.photoBtn setBackgroundImage:image forState: UIControlStateNormal];
+    [self.photoBtn setTitle: nil forState: UIControlStateNormal];
+    [picker dismissViewControllerAnimated:YES completion: nil];
+}
+
+- (void) actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    UIImagePickerController *picker = [UIImagePickerController new];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    
+    if (buttonIndex == 0) {
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else if (buttonIndex == 1) {
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    [self presentViewController:picker animated:YES completion: nil];
+    
+}
+
 
 @end
