@@ -20,9 +20,16 @@ static NSString *CONTAC_CELL = @"contactCell";
 -(id) init {
     self = [super init];
     if (self) {
+        
+        UIImage *img = [UIImage imageNamed:@"lista-contatos.png"];
+        
+        UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Brothers" image: img tag:0];
+        
         // Create the addButton, calling self the method showFormContacView
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemAdd) target:self action:@selector(showFormContactView)];
 
+        self.tabBarItem = tabItem;
+        
         // Set the title
         self.navigationItem.title = @"VNT Contacts";
         // Add the button

@@ -14,6 +14,20 @@
 
 @implementation ContactMapViewController
 
+- (id) init{
+    self = [super init];
+    
+    if (self) {
+        UIImage *imageTabItem = [UIImage imageNamed:@"mapa-contatos.png"];
+        UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Map" image:imageTabItem tag:0];
+        
+        self.tabBarItem = tabItem;
+    }
+    
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
