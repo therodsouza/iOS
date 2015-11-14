@@ -72,6 +72,7 @@
 		32BE618D1BF774DE00DFB871 /* ContactMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactMapViewController.h; path = ../ContactMapViewController.h; sourceTree = "<group>"; };
 		32BE618E1BF774DE00DFB871 /* ContactMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactMapViewController.m; path = ../ContactMapViewController.m; sourceTree = "<group>"; };
 		32BE618F1BF774DE00DFB871 /* ContactMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactMapViewController.xib; path = ../ContactMapViewController.xib; sourceTree = "<group>"; };
+		32BE61921BF7A40200DFB871 /* Vila Mariana.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Vila Mariana.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +138,7 @@
 				3207A3881BDBAACC007CE339 /* Assets.xcassets */,
 				3207A38A1BDBAACC007CE339 /* LaunchScreen.storyboard */,
 				3207A38D1BDBAACC007CE339 /* Info.plist */,
+				32BE61921BF7A40200DFB871 /* Vila Mariana.gpx */,
 				3207A3851BDBAACC007CE339 /* ContatosIP67.xcdatamodeld */,
 				3207A3791BDBAACC007CE339 /* Supporting Files */,
 				3207A3BD1BDBF136007CE339 /* ContactDao.h */,
