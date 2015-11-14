@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ContactsListViewController.h"
+#import "ContactMapViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    UITabBarController *tab = [UITabBarController new];
+    ContactMapViewController *map = [ContactMapViewController new];
+    
     // We want to use ContactsListViewController as main screen
     ContactsListViewController *list = [ContactsListViewController new];
     
@@ -24,7 +29,8 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:list];
 
     // Set the navigation controller as the root view controller
-    self.window.rootViewController = nav;
+    tab.viewControllers = @[nav, map];
+    self.window.rootViewController = tab;
 
     // Override point for customization after application launch.
     return YES;
@@ -102,7 +108,6 @@
     
     return _persistentStoreCoordinator;
 }
-
 
 - (NSManagedObjectContext *)managedObjectContext {
     // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
