@@ -22,6 +22,7 @@
         UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Map" image:imageTabItem tag:0];
         
         self.tabBarItem = tabItem;
+        self.navigationItem.title = @"Location";
     }
     
     return self;
@@ -30,6 +31,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    MKUserTrackingBarButtonItem *GPSBtn = [[MKUserTrackingBarButtonItem alloc] initWithMapView: self.map];
+                                           
+    self.navigationItem.rightBarButtonItem = GPSBtn;
+    self.manager = [CLLocationManager new];
+    [self.manager requestWhenInUseAuthorization];
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -11,4 +11,7 @@
 
 @interface ContactMapViewController : UIViewController
 
+@property CLLocationManager *manager;
+@property IBOutlet MKMapView *map;
+
 @end

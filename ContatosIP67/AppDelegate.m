@@ -20,7 +20,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     UITabBarController *tab = [UITabBarController new];
+    
     ContactMapViewController *map = [ContactMapViewController new];
+    UINavigationController *navMap = [[UINavigationController alloc] initWithRootViewController:map];
     
     // We want to use ContactsListViewController as main screen
     ContactsListViewController *list = [ContactsListViewController new];
@@ -29,7 +31,7 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:list];
 
     // Set the navigation controller as the root view controller
-    tab.viewControllers = @[nav, map];
+    tab.viewControllers = @[nav, navMap];
     self.window.rootViewController = tab;
 
     // Override point for customization after application launch.
