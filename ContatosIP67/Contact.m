@@ -18,4 +18,12 @@
     return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
 }
 
+- (NSString *) title {
+    return self.name;
+}
+
+- (NSString *) subtitle {
+    return self.address;
+}
+
 @end

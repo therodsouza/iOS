@@ -67,4 +67,24 @@
     [self.map removeAnnotations:self.contacts];
 }
 
+-(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    static NSString *pinId = @"pin";
+    
+    MKPinAnnotationView *pinView = (MKPinAnnotationView *) [self.map dequeueReusableAnnotationViewWithIdentifier: pinId];
+    
+    if (!pinView) {
+        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pinId];
+    } else {
+        pinView.annotation = annotation;
+    }
+    
+    return pinView;
+    
+    
+}
+
 @end

@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "ContactDao.h"
 
-@interface ContactMapViewController : UIViewController
+@interface ContactMapViewController : UIViewController<MKMapViewDelegate>
 
 @property CLLocationManager *manager;
 @property IBOutlet MKMapView *map;
