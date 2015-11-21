@@ -29,9 +29,10 @@
 @property Contact *contact;
 @property (weak) id<FormContactViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIButton *photoBtn;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 - (IBAction)selectPhoto;
-- (IBAction)searchCoordinates;
+- (IBAction)searchCoordinates: (UIButton *) button;
 
 @end
 

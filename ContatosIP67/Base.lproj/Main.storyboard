@@ -78,33 +78,36 @@
                                     <action selector="selectPhoto" destination="BYZ-38-t0r" eventType="touchUpInside" id="flb-VE-GBH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9e-uy-cQv">
-                                <rect key="frame" x="13" y="289" width="68" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9e-uy-cQv">
+                                <rect key="frame" x="48" y="289" width="28" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0t-AP-XLo">
-                                <rect key="frame" x="0.0" y="328" width="85" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0t-AP-XLo">
+                                <rect key="frame" x="44" y="328" width="32" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRZ-cI-ulC">
-                                <rect key="frame" x="84" y="286" width="164" height="30"/>
+                                <rect key="frame" x="84" y="286" width="145" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKQ-wf-5hA">
-                                <rect key="frame" x="84" y="324" width="164" height="30"/>
+                                <rect key="frame" x="84" y="324" width="145" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SLf-6h-weP">
+                                <rect key="frame" x="261" y="313" width="20" height="20"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhg-Y2-eQ5">
-                                <rect key="frame" x="256" y="309" width="31" height="30"/>
+                                <rect key="frame" x="256" y="308" width="31" height="30"/>
                                 <state key="normal" title="Button" image="gps"/>
                                 <connections>
-                                    <action selector="searchCoordinates" destination="BYZ-38-t0r" eventType="touchUpInside" id="GfU-Cm-XYo"/>
+                                    <action selector="searchCoordinates:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RO0-rz-2ry"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -114,6 +117,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="photoBtn" destination="ZOh-fz-rNs" id="5gX-U0-MjL"/>
+                        <outlet property="spinner" destination="SLf-6h-weP" id="J0m-TD-Jpi"/>
                         <outlet property="textFieldAddress" destination="adZ-sI-V3a" id="TFP-It-wzh"/>
                         <outlet property="textFieldEmail" destination="Mxb-o6-hNH" id="mMu-AU-WY5"/>
                         <outlet property="textFieldLatitude" destination="yRZ-cI-ulC" id="YDl-iO-J4R"/>

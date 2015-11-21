@@ -169,7 +169,10 @@
     
 }
 
-- (IBAction)searchCoordinates {
+- (IBAction)searchCoordinates: (UIButton *) button {
+    [self.spinner startAnimating];
+    button.hidden = YES;
+    
     CLGeocoder *geocoder = [CLGeocoder new];
     [geocoder geocodeAddressString: self.textFieldAddress.text completionHandler: ^(NSArray *results, NSError *error) {
         if (error == nil && [results count] > 0) {
@@ -177,9 +180,13 @@
             CLLocationCoordinate2D coordinate = result.location.coordinate;
             self.textFieldLatitude.text = [NSString stringWithFormat:@"%f", coordinate.latitude];
             self.textFieldLongitude.text = [NSString stringWithFormat:@"%f", coordinate.longitude];
+        } else {
+            NSLog(@"Error: %@ Results: %@", error, results);
         }
+        
+        [self.spinner stopAnimating];
+        button.hidden = NO;
     }];
 }
-
 
 @end
