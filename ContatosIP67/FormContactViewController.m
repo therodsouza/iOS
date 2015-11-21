@@ -28,6 +28,8 @@
         self.textFieldSite.text = self.contact.site;
         self.textFieldAddress.text = self.contact.address;
         self.textFieldPhone.text = self.contact.phone;
+        self.textFieldLatitude.text = [self.contact.latitude stringValue];
+        self.textFieldLongitude.text = [self.contact.longitude stringValue];
 
         if (self.contact.photo) {
             [self.photoBtn setBackgroundImage:self.contact.photo forState:UIControlStateNormal];
@@ -115,15 +117,17 @@
     NSString *site = self.textFieldSite.text;
     NSString *address = self.textFieldAddress.text;
     NSString *phone = self.textFieldPhone.text;
+    NSNumber *latitude = [NSNumber numberWithFloat: [self.textFieldLatitude.text floatValue]];
+    NSNumber *longitude = [NSNumber numberWithFloat: [self.textFieldLongitude.text floatValue]];
     
     // Create the contact object and set the values
     self.contact.name = name;
     self.contact.email = email;
     self.contact.site = site;
-    self.contact.address =address;
+    self.contact.address = address;
     self.contact.phone = phone;
-
-    
+    self.contact.latitude = latitude;
+    self.contact.longitude = longitude;
 }
 
 - (IBAction)selectPhoto {
