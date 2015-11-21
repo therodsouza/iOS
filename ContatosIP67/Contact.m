@@ -14,4 +14,8 @@
     return [NSString stringWithFormat: @"%@ <%@>", self.name, self.email ];
 }
 
+- (CLLocationCoordinate2D) coordinate {
+    return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
+}
+
 @end

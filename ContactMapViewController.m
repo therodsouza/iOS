@@ -8,6 +8,7 @@
 
 #import "ContactMapViewController.h"
 
+
 @interface ContactMapViewController ()
 
 @end
@@ -38,6 +39,7 @@
     self.manager = [CLLocationManager new];
     [self.manager requestWhenInUseAuthorization];
     
+    self.contacts = [[ContactDao contactDaoInstance] contacts];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -56,5 +58,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) viewWillAppear:(BOOL)animated {
+    [self.map addAnnotations:self.contacts];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [self.map removeAnnotations:self.contacts];
+}
 
 @end

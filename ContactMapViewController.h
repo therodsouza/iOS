@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "ContactDao.h"
 
 @interface ContactMapViewController : UIViewController
 
 @property CLLocationManager *manager;
 @property IBOutlet MKMapView *map;
+@property (nonatomic, weak) NSMutableArray *contacts;
 
 @end
