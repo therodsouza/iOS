@@ -34,6 +34,7 @@
     // Set the navigation controller as the root view controller
     tab.viewControllers = @[nav, navMap];
     self.window.rootViewController = tab;
+    self.dao = [ContactDao contactDaoInstance];
 
     // Override point for customization after application launch.
     return YES;

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Contact.h"
+
 @import UIKit;
 @interface ContactDao : NSObject
 
