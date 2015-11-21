@@ -81,4 +81,8 @@ static ContactDao *defaultDao = nil;
     _contacts = [contactsQuery mutableCopy];
 }
 
+- (Contact *) newContact {
+    return [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:[[CoreData coreDataInstance]managedObjectContext]];
+}
+
 @end

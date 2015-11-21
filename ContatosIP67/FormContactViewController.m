@@ -71,7 +71,7 @@
 // Save new Contacts
 -(void) saveContact {
     // Create the property contact
-    self.contact = [Contact new];
+    self.contact = [self.dao newContact];
     // get the form data and save it
     [self getFormData];
     // add the contact
@@ -104,7 +104,7 @@
 - (void) getFormData {
     
     if (!self.contact) {
-        self.contact = [Contact new];
+        self.contact = [self.dao newContact];
     }
     
     if ([self.photoBtn backgroundImageForState:UIControlStateNormal]) {
