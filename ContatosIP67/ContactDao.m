@@ -26,8 +26,8 @@ static ContactDao *defaultDao = nil;
     self = [super init];
     
     if (self) {
-        _contacts = [NSMutableArray new];
         [self insertDefaultContact];
+        [self listContacts];
     }
     return self;
 }
@@ -59,7 +59,7 @@ static ContactDao *defaultDao = nil;
     
     BOOL inserted = [configs boolForKey:@"inserted"];
     
-    if (inserted) {
+    if (!inserted) {
         Contact *defaultContact = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:[[CoreData coreDataInstance]managedObjectContext]];
         
         defaultContact.name = @"Rodrigo";
@@ -71,6 +71,14 @@ static ContactDao *defaultDao = nil;
         [configs setBool:YES forKey:@"inserted"];
         [configs synchronize];
     }
+}
+
+- (void) listContacts {
+    NSFetchRequest *query = [NSFetchRequest fetchRequestWithEntityName:@"Contact"];
+    NSSortDescriptor *alphaOrder = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    query.sortDescriptors = @[alphaOrder];
+    NSArray *contactsQuery = [[[CoreData coreDataInstance]managedObjectContext]executeFetchRequest:query error:nil];
+    _contacts = [contactsQuery mutableCopy];
 }
 
 @end
