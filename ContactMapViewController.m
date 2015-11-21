@@ -82,9 +82,18 @@
         pinView.annotation = annotation;
     }
     
+    Contact *contact = (Contact *) annotation;
+    pinView.pinTintColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
+    pinView.canShowCallout = YES;
+    
+    if (contact.photo) {
+        UIImageView *contactphoto = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 32.0, 32.0)];
+        contactphoto.image = contact.photo;
+        pinView.leftCalloutAccessoryView = contactphoto;
+        
+    }
+    
     return pinView;
-    
-    
 }
 
 @end
