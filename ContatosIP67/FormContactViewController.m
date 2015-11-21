@@ -167,6 +167,14 @@
 
 - (IBAction)searchCoordinates {
     CLGeocoder *geocoder = [CLGeocoder new];
+    [geocoder geocodeAddressString: self.textFieldAddress.text completionHandler: ^(NSArray *results, NSError *error) {
+        if (error == nil && [results count] > 0) {
+            CLPlacemark *result = results[0];
+            CLLocationCoordinate2D coordinate = result.location.coordinate;
+            self.textFieldLatitude.text = [NSString stringWithFormat:@"%f", coordinate.latitude];
+            self.textFieldLongitude.text = [NSString stringWithFormat:@"%f", coordinate.longitude];
+        }
+    }];
 }
 
 
