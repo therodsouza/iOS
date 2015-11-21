@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ContactsListViewController.h"
 #import "ContactMapViewController.h"
+#import "CoreData.h"
 
 @interface AppDelegate ()
 
@@ -59,7 +60,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [[ContactDao contactDaoInstance ] saveContext];
+    [[CoreData coreDataInstance] saveContext];
 }
 
 @end

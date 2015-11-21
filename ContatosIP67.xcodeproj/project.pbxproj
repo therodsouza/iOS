@@ -20,6 +20,7 @@
 		3207A3BC1BDBE80C007CE339 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3BB1BDBE80C007CE339 /* Contact.m */; };
 		3207A3BF1BDBF136007CE339 /* ContactDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3BE1BDBF136007CE339 /* ContactDao.m */; };
 		3207A3C51BDC080C007CE339 /* ContactsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3C41BDC080C007CE339 /* ContactsListViewController.m */; };
+		327030B71C00DD1E005ACB09 /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 327030B61C00DD1E005ACB09 /* CoreData.m */; };
 		32BB79961BEE462F00AD84B2 /* ActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB79951BEE462F00AD84B2 /* ActionManager.m */; };
 		32BE61891BF771E300DFB871 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BE61881BF771E300DFB871 /* MapKit.framework */; };
 		32BE61901BF774DE00DFB871 /* ContactMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BE618E1BF774DE00DFB871 /* ContactMapViewController.m */; };
@@ -67,6 +68,8 @@
 		3207A3BE1BDBF136007CE339 /* ContactDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDao.m; sourceTree = "<group>"; };
 		3207A3C31BDC080C007CE339 /* ContactsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsListViewController.h; sourceTree = "<group>"; };
 		3207A3C41BDC080C007CE339 /* ContactsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsListViewController.m; sourceTree = "<group>"; };
+		327030B51C00DD1E005ACB09 /* CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData.h; sourceTree = "<group>"; };
+		327030B61C00DD1E005ACB09 /* CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreData.m; sourceTree = "<group>"; };
 		32BB79941BEE462F00AD84B2 /* ActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionManager.h; sourceTree = "<group>"; };
 		32BB79951BEE462F00AD84B2 /* ActionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionManager.m; sourceTree = "<group>"; };
 		32BE61881BF771E300DFB871 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -154,6 +157,8 @@
 				3207A3C41BDC080C007CE339 /* ContactsListViewController.m */,
 				32BB79941BEE462F00AD84B2 /* ActionManager.h */,
 				32BB79951BEE462F00AD84B2 /* ActionManager.m */,
+				327030B51C00DD1E005ACB09 /* CoreData.h */,
+				327030B61C00DD1E005ACB09 /* CoreData.m */,
 			);
 			path = ContatosIP67;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				32BE61901BF774DE00DFB871 /* ContactMapViewController.m in Sources */,
 				3207A3BC1BDBE80C007CE339 /* Contact.m in Sources */,
 				3207A37B1BDBAACC007CE339 /* main.m in Sources */,
+				327030B71C00DD1E005ACB09 /* CoreData.m in Sources */,
 				3207A3C51BDC080C007CE339 /* ContactsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
